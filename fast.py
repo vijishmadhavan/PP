@@ -4,10 +4,13 @@ from typing import List
 import requests as r
 import base64
 from PIL import Image
+import os
 from io import BytesIO
 
-ENDPOINT_URL = "https://vdhmggug2ssjbacc.us-east-1.aws.endpoints.huggingface.cloud"
-HF_TOKEN = "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"
+
+ENDPOINT_URL = os.environ.get('ENDPOINT_URL')
+HF_TOKEN = os.environ.get('HF_TOKEN')
+
 
 def encode_image(image_path):
   with open(image_path, "rb") as i:
