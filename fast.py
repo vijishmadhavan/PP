@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 
 
 ENDPOINT_URL = os.getenv('ENDPOINT_URL')
-HF_TOKEN = os.getenv'HF_TOKEN')
+HF_TOKEN = os.getenv('HF_TOKEN')
 
 print(ENDPOINT_URL)
 print(HF_TOKEN)
