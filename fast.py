@@ -19,7 +19,7 @@ def encode_image(image_path):
 
 
 def predict(prompt, image_path, negative_prompt="worst quality, low quality, oil painting, historic", controlnet_type="canny_edge"):
-    image = encode_image(image_path)
+    image = encode_image(image_path.name)
 
     # prepare sample payload
     payload = {"inputs": prompt, "image": image, "negative_prompt": negative_prompt, "controlnet_type": controlnet_type}
