@@ -7,13 +7,15 @@ from PIL import Image
 import os
 from io import BytesIO
 import io
+from dotenv import load_dotenv
 
 
 
-ENDPOINT_URL = os.environ.get('ENDPOINT_URL')
-HF_TOKEN = os.environ.get('HF_TOKEN')
+ENDPOINT_URL = os.getenv('ENDPOINT_URL')
+HF_TOKEN = os.getenv'HF_TOKEN')
 
-
+print(ENDPOINT_URL)
+print(HF_TOKEN)
 def encode_image(image_bytes):
   b64 = base64.b64encode(image_bytes.read())
   return b64.decode("utf-8")
