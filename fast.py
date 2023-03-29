@@ -21,7 +21,7 @@ def encode_image(image_path):
 
 
 def predict(prompt, image_path, negative_prompt="worst quality, low quality, oil painting, historic", controlnet_type="canny_edge"):
-    image = encode_image(io.BytesIO(image_path))
+    image = encode_image(image_path)
 
     # prepare sample payload
     payload = {"inputs": prompt, "image": image, "negative_prompt": negative_prompt, "controlnet_type": controlnet_type}
@@ -43,7 +43,7 @@ st.title("Product Photography")
 prompt = st.text_input("Enter a prompt:", "sneakers kept on sea sand")
 image_path = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
 if image_path is not None:
-    image_bytes = image_path.read()
+    image_bytes = image_path.name
 
 # Make prediction and display result
 if image_path is not None:
