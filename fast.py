@@ -9,7 +9,7 @@ from io import BytesIO
 import io
 from dotenv import load_dotenv
 
-
+load_dotenv()
 
 ENDPOINT_URL = os.getenv('ENDPOINT_URL')
 HF_TOKEN = os.getenv('HF_TOKEN')
