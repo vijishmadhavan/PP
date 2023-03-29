@@ -6,6 +6,8 @@ import base64
 from PIL import Image
 import os
 from io import BytesIO
+import io
+
 
 
 ENDPOINT_URL = os.environ.get('ENDPOINT_URL')
