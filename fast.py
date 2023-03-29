@@ -42,11 +42,13 @@ st.title("Product Photography")
 # Get user input
 prompt = st.text_input("Enter a prompt:", "sneakers kept on sea sand")
 image_path = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
+if image_path is not None:
+    image_bytes = image_path.read()
 
 # Make prediction and display result
 if image_path is not None:
     st.image(image_path, caption="Uploaded Image", use_column_width=True)
-    prediction = predict(prompt, image_path=image_path, negative_prompt="worst quality, low quality, oil painting, historic", controlnet_type="canny_edge")
+    prediction = predict(prompt, image_path=image_bytes, negative_prompt="worst quality, low quality, oil painting, historic", controlnet_type="canny_edge")
     st.image(prediction, caption="Predicted Image", use_column_width=True)
 else:
     st.write("Please upload an image.") 
