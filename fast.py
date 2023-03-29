@@ -9,9 +9,12 @@ from io import BytesIO
 import io
 
 
+from dotenv import load_dotenv
 
-ENDPOINT_URL = os.environ.get('ENDPOINT_URL')
-HF_TOKEN = os.environ.get('HF_TOKEN')
+
+
+ENDPOINT_URL = os.getenv('ENDPOINT_URL')
+HF_TOKEN = os.getenv('HF_TOKEN')
 
 
 def encode_image(image_bytes):
