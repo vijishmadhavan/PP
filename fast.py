@@ -18,7 +18,7 @@ def encode_image(image_path):
   return b64.decode("utf-8")
 
 
-def predict(prompt,negative_prompt="worst quality, low quality, oil painting, historic", controlnet_type="canny_edge", image_path):
+def predict(prompt, image_path, negative_prompt="worst quality, low quality, oil painting, historic", controlnet_type="canny_edge"):
     image = encode_image(image_path)
 
     # prepare sample payload
